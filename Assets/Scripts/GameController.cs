@@ -24,7 +24,7 @@ public class GameController : MonoBehaviour {
 	bool IsPsitionTooCloseToOthers(Vector3 spawnPosition){
 		foreach (GameObject planet in allPlanets) {
 			float distandce = Vector3.Distance(spawnPosition,planet.transform.localPosition);
-			if(distandce <5){
+			if(distandce <6){
 				return true;
 			}
 		}

@@ -9,6 +9,10 @@ public class Grow : MonoBehaviour {
 	private int wachstumsrate;
 
 	void Start () {
+
+		Light halo = this.GetComponentInChildren<Light>();
+		halo.enabled = false;
+
 				var startgrösse = Random.Range (1, 3);
 		if (startgrösse == 1) {
 					shipcounter = Random.Range (1, 20);
@@ -38,8 +42,27 @@ public class Grow : MonoBehaviour {
 				yield return new WaitForSeconds(timebetweengrows);
 	}
 	}}
-	void GenerateSize(){
-			
-		}
+
+	public void EnableDragHalo()
+	{
+		Light halo = this.GetComponentInChildren<Light>();
+		
+		
+
+
+		halo.enabled = true;
+		halo.intensity = 6;
+	}
+
+	public void DisableHalo()
+	{
+		Light halo = this.GetComponentInChildren<Light> ();
+		halo.enabled = false;
+		Debug.Log ("doesthisexist");
+
+	}
+
+
+
 
 }
